@@ -52,10 +52,10 @@ let returnListWithDegreesOfTwo n m =
 /// <param name="list">The original list</param>
 /// <param name="number">The required number</param>
 let find list number =
-    let rec helpFirstInputInList list number acc =
+    let rec helpFind list number acc =
         match list with
         | [] -> -1
         | head :: tail ->
             if head = number then acc
-            else helpFirstInputInList tail number (acc + 1)
-    helpFirstInputInList list number 0
+            else helpFind tail number (acc + 1)
+    helpFind list number 0
