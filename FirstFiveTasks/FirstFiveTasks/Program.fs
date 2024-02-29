@@ -26,12 +26,12 @@ let fibonacci n =
 /// Reverse the list
 /// </summary>
 /// <param name="list">The list that needs to be reversed</param>
-let reverseList list =
-    let rec helpReverseList list acc =
+let reverse list =
+    let rec helpReverse list acc =
         match list with
         | [] -> acc
-        | head :: tail -> helpReverseList tail (head :: acc)
-    helpReverseList list []
+        | head :: tail -> helpReverse tail (head :: acc)
+    helpReverse list []
 
 /// <summary>
 /// Creates a list with powers of two, as follows [2^n; 2^(n + 1); ...; 2^(n + m)]
@@ -42,7 +42,7 @@ let returnListWithDegreesOfTwo n m =
     let temple = 2.0 ** n
     let rec helpReturnListWithDegreesOfTwo n m acc list =
         let storage = acc * 2.0
-        if m = 0 then List.rev list
+        if m = 0 then reverse list
         else helpReturnListWithDegreesOfTwo n (m - 1) storage (storage :: list)
     helpReturnListWithDegreesOfTwo n m temple [temple]
 
@@ -51,7 +51,7 @@ let returnListWithDegreesOfTwo n m =
 /// </summary>
 /// <param name="list">The original list</param>
 /// <param name="number">The required number</param>
-let findFirstInputInList list number =
+let find list number =
     let rec helpFirstInputInList list number acc =
         match list with
         | [] -> -1
