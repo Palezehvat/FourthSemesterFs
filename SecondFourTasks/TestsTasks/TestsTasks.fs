@@ -57,4 +57,4 @@ let PrimeSeqShouldGenerateCorrectly() =
     let expectedPrimes = [2; 3; 5; 7; 11; 13; 17; 19; 23; 29]
     let actualPrimes = Seq.take 10 primeSequence |> Seq.toList
 
-    Assert.AreEqual(expectedPrimes, actualPrimes)
+    Assert.That(expectedPrimes, Is.EqualTo(actualPrimes))
