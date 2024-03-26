@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{textgreek}
+
+\usepackage{graphicx} % Required for inserting images
+
+\title{S K K = I}
+\date{March 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Задание}
+Доказать, что S K K = I. Доказательство набрать в TeX и выложить на GitHub.
+\section{Решение}
+1) S K K \\
+2) S := [λx y z.x z (y z)] - коннектор, K := [λx y.x] -  канцеллятор (первый элемент пары), I := [λx.x] - тождественная функция \\
+3) S K K = (λx y z.x z (y z))(λx y.x)(λx y.x) = (λx y z.x z (y z)) K K \\
+4) (λx.(λy.(λz.x z (y z)))) K K \\
+5) ((λy.(λz.x z (y z))) [x := K]) K \\
+6) (λy.(λz.K z (y z))) K \\
+7) ((λz.K z (y z)) [y := K]) \\
+8) (λz.K z (K z)) \\
+9) λz.((λx y.x) z ((λx y.x) z)) \\
+10) λz.((λx y.x) z ((λx.(λy.x)) z)) \\
+11) λz.((λx y.x) z ((λy.x) [x := z])) \\
+12) λz.((λx y.x) z (λy.z)) \\
+13) λz.((λx.(λy.x)) z (λy.z)) \\ 
+14) λz.(((λy.x) [x := z]) (λy.z)) \\
+15) λz.((λy.z) (λy.z)) \\
+16) λz.((z) [y := λy.z]) \\
+17) λz.z \\
+18) I
+\end{document}
