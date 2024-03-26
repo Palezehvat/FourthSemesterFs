@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{textgreek}
+
+\usepackage{graphicx} % Required for inserting images
+
+\title{Нормализация}
+\date{March 2024}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Задание}
+Привести к нормальной форме λ-терм ((λa.(λb.b b) (λb.b b)) b) ((λc.(c b)) (λa.a)). Решение (в виде последовательности преобразований) набрать в TeX и выложить файл .tex на GitHub. Каждое преобразование должно быть одним действием (не пропускайте преобразования в описании вывода).
+\section{Решение}
+1) ((λa.(λb.b b) (λb.b b)) b) ((λc.(c b)) (λa.a)) \\
+2) (((λb.b b) (λb.b b)) [a := b]) ((λc.(c b)) (λa.a)) \\
+3) ((λb.b b) (λb.b b)) ((λc.(c b)) (λa.a)) \\
+4) ((λb.b b) (λb.b b)) ((c b) [c := λa.a]) \\
+5) ((λb.b b) (λb.b b)) (λa.a b) \\
+\end{document}
